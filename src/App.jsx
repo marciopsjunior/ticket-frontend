@@ -70,20 +70,26 @@ function App() {
         <button className="create-btn" onClick={handleCreateTicket}>Criar Chamado</button>
       </div>
 
-      <h1>Lista de Chamados</h1>
       <ul className="ticket-list">
-        {tickets?.map((ticket) => (
-          <li key={ticket.id} className="ticket-item">
-            <p><strong>Título:</strong> {ticket.title}</p>
-            <p><strong>Status:</strong> {ticket.status}</p>
-            <p><strong>Descrição:</strong> {ticket.description}</p>
-            <p><strong>Data de Criação:</strong> {new Date(ticket.createdAt).toLocaleString()}</p>
-            <div className="button-group">
-              <button onClick={() => handleUpdateStatus(ticket.id, "CLOSED")}>Fechar Chamado</button>
-              <button onClick={() => handleDeleteTicket(ticket.id)}>Excluir Chamado</button>
-            </div>
-          </li>
-        ))}
+      <h1>Lista de Chamados</h1>
+        {tickets.length > 0 ? (
+          <ul className="ticket-list">
+            {tickets.map((ticket) => (
+              <li key={ticket.id} className="ticket-item">
+                <p><strong>Título:</strong> {ticket.title}</p>
+                <p><strong>Status:</strong> {ticket.status}</p>
+                <p><strong>Descrição:</strong> {ticket.description}</p>
+                <p><strong>Data de Criação:</strong> {new Date(ticket.createdAt).toLocaleString()}</p>
+                <div className="button-group">
+                  <button onClick={() => handleUpdateStatus(ticket.id, "CLOSED")}>Fechar Chamado</button>
+                  <button onClick={() => handleDeleteTicket(ticket.id)}>Excluir Chamado</button>
+                </div>
+              </li>
+            ))}
+          </ul>
+          ) : (
+          <p>Nenhum chamado encontrado.</p>
+        )}
       </ul>
     </div>
   );
