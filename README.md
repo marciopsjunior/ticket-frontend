@@ -2,6 +2,9 @@ Projeto de Chamados (Tickets)
 
 Sistema simples de gerenciamento de chamados, feito com React no frontend e uma API REST para manipulação de tickets.
 
+<img width="884" height="936" alt="image" src="https://github.com/user-attachments/assets/6dbbb4d9-491a-45c4-b60a-9ce20fda9cb3" />
+
+
 Requisitos
 
 - Node.js (versão 18+ recomendada)
